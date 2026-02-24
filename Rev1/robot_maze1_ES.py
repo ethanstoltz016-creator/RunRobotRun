@@ -4,6 +4,13 @@ import subprocess
 import sys
 import os
 
+script_path = os.path.abspath(sys.argv[0]) if '__file__' not in locals() else os.path.abspath(__file__)
+  # Get the directory name from the script path
+script_dir = os.path.dirname(script_path)
+  # Change the current working directory to the script's directory
+os.chdir(script_dir)
+print(f"Current working directory changed to: {os.getcwd()}")
+        
 #----- maze and turtle config variables
 screen_h = 400
 screen_w = 420
@@ -61,8 +68,8 @@ for step in range(4):
 #---- end robot movement 
 
 #starts maze2
-rev2_dir = os.path.join(os.path.dirname(__file__), "..\\Rev2")
-subprocess.run([sys.executable, "robot_maze2_ES.py"], cwd=rev2_dir) # sets the current working directory to Rev2 so that it can access files in that directory
+rev2_dir = os.path.join(os.path.dirname(__file__), "..\\Rev2")  # sets the current working directory to Rev2 so that it can access files in that directory
+subprocess.run([sys.executable, "robot_maze2_ES.py"], cwd=rev2_dir) 
 
 wn.mainloop()
 trtl.exitonclick()
