@@ -2,6 +2,7 @@
 import turtle as trtl
 import subprocess
 import sys
+import os
 
 #----- maze and turtle config variables
 screen_h = 400
@@ -60,7 +61,8 @@ for step in range(4):
 #---- end robot movement 
 
 #starts maze2
-subprocess.run([sys.executable, "robot_maze2_ES.py"])
+rev2_dir = os.path.join(os.path.dirname(__file__), "..\\Rev2")
+subprocess.run([sys.executable, "robot_maze2_ES.py"], cwd=rev2_dir) # sets the current working directory to Rev2 so that it can access files in that directory
 
 wn.mainloop()
 trtl.exitonclick()
