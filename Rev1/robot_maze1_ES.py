@@ -65,11 +65,9 @@ for n in range(3):
 for step in range(4):
   move()
 
-#---- end robot movement 
+#---- close robot window when done
+wn.bye()
 
 #starts maze2
 rev2_dir = os.path.join(os.path.dirname(__file__), "..\\Rev2")  # sets the current working directory to Rev2 so that it can access files in that directory
 subprocess.run([sys.executable, "robot_maze2_ES.py"], cwd=rev2_dir) 
-
-wn.mainloop()
-trtl.exitonclick()

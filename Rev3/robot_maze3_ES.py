@@ -59,11 +59,9 @@ for n in range(2):
     turn_left()
   robot.pencolor("blue")
 
-#---- end robot movement 
+#---- close robot window when done
+wn.bye()
 
-#starts maze1
+#starts maze4
 rev4_dir = os.path.join(os.path.dirname(__file__), "..\\Rev4")
 subprocess.run([sys.executable, "robot_maze4_ES.py"], cwd=rev4_dir) # sets the current working directory to Rev4 so that it can access files in that directory
-
-
-wn.mainloop()

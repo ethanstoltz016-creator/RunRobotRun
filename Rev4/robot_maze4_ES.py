@@ -91,4 +91,4 @@ wn.onkey(moveRight, "Right")
 #---- end robot movement 
 
 wn.listen()
-wn.mainloop()
+wn.exitonclick()

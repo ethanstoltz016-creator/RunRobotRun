@@ -66,7 +66,8 @@ for n in range(2):
   turn_left()
 move()
 
-#---- end robot movement 
+#---- close robot window when done
+wn.bye()
 
 #starts maze3
 rev3_dir = os.path.join(os.path.dirname(__file__), "..\\Rev3")
